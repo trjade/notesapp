@@ -1,4 +1,4 @@
-module github.com/trjade/notesapp
+module notesapp
 
 go 1.24.4
 

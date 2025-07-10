@@ -1,6 +1,6 @@
 package main
 
-import "github.com/trjade/notesapp/internal/server"
+import "notesapp/internal/server"
 
 func main() {
 	//fmt.Println("Hello, Go TODO project.....")
