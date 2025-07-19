@@ -2,12 +2,15 @@ package handlers
 
 import (
 	"encoding/json"
+	"io"
+	"net/http"
+	"strconv"
+	"strings"
 
 	"notesapp/internal/models"
-
 )
 
-func NotesHandler(w http.ResponseWriter, r * http.Request) {
+func NotesHandler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
 		rows, err := models.DB.Query("SELECT id, title, content from notes")
@@ -46,7 +49,7 @@ func NotesHandler(w http.ResponseWriter, r * http.Request) {
 	}
 }
 
-func DeleteNoteHandler(w http.ResponseWriter, r *http.Request){
+func DeleteNoteHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodDelete {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
