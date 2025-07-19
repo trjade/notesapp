@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"notesapp/internal/models"
+
 )
 
 func NotesHandler(w http.ResponseWriter, r *http.Request) {
@@ -68,5 +69,5 @@ func DeleteNoteHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusNotContent)
+	w.WriteHeader(http.StatusNoContent)
 }
