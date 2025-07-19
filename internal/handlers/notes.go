@@ -3,7 +3,7 @@ package handlers
 import (
 	"encoding/json"
 
-	 "github.com/trjade/notesapp/internal/models"
+	"notesapp/internal/models"
 
 )
 
