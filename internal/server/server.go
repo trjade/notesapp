@@ -5,6 +5,9 @@ import (
 	"log"
 	"net/http"
 
+	"notesapp/internal/models"
+	"notesapp/internal/handlers"
+
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -13,7 +16,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func Start() {
 	err := models.InitDB()
-	if err = nil {
+	if err != nil {
 		log.Fatalf("Failed to connect to DB : %v", err)
 	}
 
